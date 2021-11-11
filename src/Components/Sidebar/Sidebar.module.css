@@ -1,0 +1,106 @@
+.sidebar {
+  border-right: 1px solid var(--twitter-background);
+  flex: 0.2;
+  display: flex;
+  flex-direction: column;
+  /* min-width: 250px; */
+  margin-top: 20px;
+  padding: 0 20px;
+  max-width: 270px;
+}
+
+.tweetButton {
+  background-color: var(--twitter-color) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 900 !important;
+  text-transform: inherit !important;
+  border-radius: 30px !important;
+  height: 60px !important;
+  vertical-align: bottom !important;
+}
+
+.twitterIcon {
+  flex: 0.1;
+  color: var(--twitter-color);
+  font-size: 30px !important;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.bottomButton {
+  flex: 0.2;
+  margin-top: auto;
+}
+.open {
+  height: 80px !important;
+  transition: 300ms !important;
+}
+.closed {
+  display: flex;
+  flex-direction: row;
+}
+.closed h3 {
+  margin: 10px;
+}
+.avatar {
+  margin: auto !important;
+  width: 50px !important;
+  height: 50px !important;
+}
+.opened {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.profile h4:hover {
+  color: black;
+  text-decoration: underline;
+  transition: 300ms;
+}
+.urlInput {
+  width: 90% !important;
+}
+
+@media screen and (max-width: 1024px) {
+  .sidebar {
+    visibility: hidden;
+    position: absolute;
+    left: -200px;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    z-index: 0;
+    background-color: white;
+  }
+  .sidebarOpen {
+    visibility: visible;
+    opacity: 1;
+    left: 0;
+    width: 30%;
+    height: 800px;
+    z-index: 1;
+    overflow-y: hidden;
+  }
+  .closed h3 {
+    display: none;
+  }
+  .tweetButton {
+    width: 50px !important;
+  }
+  .opened .avatar {
+    display: none;
+  }
+  .open {
+    width: 100px !important;
+    height: 150px !important;
+  }
+  .bottomButton {
+    flex: 0.4;
+    margin-bottom: 100px !important;
+  }
+}

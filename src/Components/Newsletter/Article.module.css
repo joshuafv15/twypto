@@ -1,0 +1,47 @@
+.article {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  max-width: 400px;
+  padding: 10px;
+  border-bottom: 1px solid var(--twitter-background);
+  text-decoration: none;
+  color: black;
+}
+
+.article:hover {
+  transition: 300ms;
+  background-color: var(--twitter-background);
+}
+.content {
+  flex: 0.77;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.thumbnail {
+  flex: 0.23;
+  margin-top: 20px;
+  width: 115px;
+  height: 115px;
+  border-radius: 10px;
+}
+.text {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 1024px) {
+  .text {
+    font-size: 13px;
+  }
+  .content {
+    flex: 0.77;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .thumbnail {
+    flex: 0.23;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+  }
+}

@@ -1,0 +1,41 @@
+.sidebarOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.coinLogo {
+  padding: 20px;
+  max-width: 2rem;
+}
+
+.sidebarOption h2 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-right: 20px;
+}
+.sidebarOption:hover {
+  background-color: var(--twitter-background);
+  border-radius: 30px;
+  color: var(--twitter-color);
+  transition: 200ms ease-out;
+}
+
+.active {
+  background-color: var(--twitter-background);
+  border-radius: 30px;
+  color: var(--twitter-color);
+  transition: color 100ms ease-out;
+}
+
+@media screen and (max-width: 1024px) {
+  .sidebarOption h2 {
+    display: none;
+  }
+  .active {
+    width: fit-content;
+  }
+  .sidebarOption:hover {
+    width: fit-content;
+  }
+}

@@ -1,0 +1,67 @@
+.authPage {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+.img {
+  flex: 0.6;
+  width: 50%;
+  position: relative;
+  text-align: right;
+  overflow: auto;
+}
+.img img {
+  float: right;
+}
+
+.forms {
+  flex: 0.4;
+  background-color: white;
+  text-align: center;
+  min-width: 400px;
+}
+.footer {
+  background-color: var(--twitter-background);
+  text-align: center;
+  width: 100%;
+  height: 35px;
+  position: fixed;
+  bottom: 0%;
+}
+.footer p {
+  margin-top: 5px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 250px;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  padding: 50px;
+}
+
+.header {
+  margin-bottom: 10px;
+  text-align: start;
+  font-size: 40px;
+}
+.form h3 {
+  margin-bottom: 30px;
+  text-align: start;
+}
+@media screen and (max-width: 1024px) {
+  .footer {
+    display: none !important;
+  }
+  .forms {
+    background-color: var(--twitter-background);
+    height: 100%;
+  }
+  .form {
+    margin-top: 100px;
+    border: 2px solid var(--twitter-color);
+  }
+}

@@ -1,0 +1,88 @@
+.priceTracker {
+  border: 1px solid var(--twitter-background);
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  width: 90%;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50px;
+  background-color: var(--twitter-color);
+  color: black;
+}
+
+.coinLogo {
+  padding: 10px;
+  max-width: 3rem;
+  border: 2px solid var(--twitter-background);
+  border-radius: 50%;
+  background-color: var(--twitter-background);
+  transform: scale(0.8, 0.8);
+}
+.coin {
+  text-align: center;
+}
+.coin h2 {
+  margin-top: 0px;
+}
+
+.moreCoinInfo {
+  display: flex;
+  border-top: 4px solid var(--twitter-background);
+  justify-content: space-between;
+  margin-top: auto;
+  height: 5em;
+  margin: 20px;
+}
+
+.moreCoinInfo h2 {
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.noCoin {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.website {
+  text-decoration: none;
+  color: black;
+}
+.website:hover {
+  color: var(--twitter-background);
+  transition: 200ms;
+  text-decoration: underline;
+}
+.loading {
+  margin: auto;
+}
+.upTick {
+  color: rgb(24, 73, 24);
+}
+.downTick {
+  color: rgb(104, 29, 23);
+}
+.change {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: auto;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+  .priceTracker {
+    width: 100%;
+  }
+  .moreCoinInfo h2 {
+    font-size: 13px;
+  }
+  .change {
+    margin-top: auto;
+  }
+  .change span {
+    font-size: 13px;
+  }
+}

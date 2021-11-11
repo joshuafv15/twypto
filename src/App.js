@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Sidebar from "./Components/Sidebar/Sidebar";
+import Feed from "./Components/Feed/Feed";
+import Newsletter from "./Components/Newsletter/Newsletter";
+import AuthPage from "./Components/Auth/AuthPage";
+import { useDispatch, useSelector } from "react-redux";
+import { onAuthStateChanged } from "@firebase/auth";
+import { auth } from "./firebase";
+import { useEffect } from "react";
+import { saveUser } from "./slices/authSlice";
 
 function App() {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.auth.user);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (authUser) => {
+      if (authUser) {
+        dispatch(saveUser(authUser));
+      } else {
+        dispatch(saveUser(null));
+      }
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {user ? (
+        <div className="app">
+          <Sidebar />
+          <Feed />
+          <Newsletter />
+        </div>
+      ) : (
+        <AuthPage />
+      )}
+    </>
   );
 }
 
