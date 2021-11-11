@@ -13,7 +13,7 @@ body {
 }
 @media screen and (max-width: 1024px) {
   .app {
-    overflow-y: hidden;
+    overflow-y: hidden !important;
     max-width: fit-content;
   }
 }
